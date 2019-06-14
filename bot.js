@@ -12,7 +12,7 @@ console.log("Servers:")
         console.log(" - " + guild.name)
     })
 
-  var generalChannel = client.channels.get("CHANNEL_ID") 
+  var generalChannel = client.channels.get("CHANNEL_ID GOES HERE") 
     generalChannel.send("Whats up!")  
 })
 
