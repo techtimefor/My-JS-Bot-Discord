@@ -95,7 +95,26 @@ client.on('message', (receivedMessage) => {
     })
     // If you know the ID of the custom emoji you want, you can get it directly with:
     // let customEmoji = receivedMessage.guild.emojis.get(emojiId)
-})    
+}) 
+
+// set message listener 
+client.on('message', message => {
+    switch(message.content.toUpperCase()) {
+        case '?RESET':
+            resetBot(message.channel);
+            break;
+
+        // ... other commands
+    }
+});
+
+// Turn bot off (destroy), then turn it back on
+function resetBot(channel) {
+    // send channel a message that you're resetting bot [optional]
+    channel.send('Resetting...')
+    .then(msg => client.destroy())
+    .then(() => client.login(<your bot token here>));
+}
 
 client.login(bot_secret_token)
 
