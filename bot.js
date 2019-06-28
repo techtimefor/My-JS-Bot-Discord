@@ -108,13 +108,5 @@ client.on('message', message => {
     }
 });
 
-// Turn bot off (destroy), then turn it back on
-function resetBot(channel) {
-    // send channel a message that you're resetting bot [optional]
-    channel.send('Resetting...')
-    .then(msg => client.destroy())
-    .then(() => client.login(<your bot token here>));
-}
-
-client.login(bot_secret_token)
+client.login(config.token);
 
