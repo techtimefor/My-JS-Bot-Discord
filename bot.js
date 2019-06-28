@@ -5,7 +5,6 @@ client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
 })
 
-bot_secret_token = "TOKEN GOES HERE"
 
 console.log("Servers:")
     client.guilds.forEach((guild) => {
@@ -17,8 +16,8 @@ console.log("Servers:")
 })
 
 client.on('message', (receivedMessage) => {
-    >> stop bot from responding to its own messages
-    if (receivedMessage.author == client.user) {
+    // stop bot from responding to its own messages
+    if (receivedMessage.author == client.user) 
         return
     }
 
@@ -74,7 +73,7 @@ function multiplyCommand(arguments, receivedMessage) {
 }
 
 client.on('ready', () => {
-    >>bot to play game
+    //bot to play game
     client.user.setActivity("Chilling")
     })
 
